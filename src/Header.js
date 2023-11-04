@@ -1,14 +1,16 @@
 import React from 'react';
 import mvpBanner from './Assets/mvp-banner.png';
 import "./Header.css";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 
 
 const Header = () => {
-
+    const history = useHistory();
 
     const handleButtonClick = () => {
-        // Buton tıklama işlemleri burada gerçekleştirilebilir
+        history.push('/pizza');
         console.log('Butona tıklandı!');
     };
 
