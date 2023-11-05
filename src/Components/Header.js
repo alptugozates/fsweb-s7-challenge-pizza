@@ -1,5 +1,5 @@
 import React from 'react';
-import mvpBanner from './Assets/mvp-banner.png';
+import mvpBanner from '../Assets/mvp-banner.png';
 import "./Header.css";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
