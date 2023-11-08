@@ -1,28 +1,22 @@
 import React from 'react';
-import mvpBanner from '../Assets/mvp-banner.png';
-import "./Header.css";
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-
-
-
+import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const history = useHistory();
-
-    const handleButtonClick = () => {
-        history.push('/pizza');
-        console.log('Butona tıklandı!');
-    };
-
     return (
-        <header className="header-container">
-            <h1 className="header-title">Teknolojik Yemekler</h1>
-            <p className="subtitle">KOD ACIKTIRIR</p>
-            <p className="subtitle">PİZZA, DOYURUR</p>
-            <button onClick={handleButtonClick} className="header-button">
-                ACIKTIM
-            </button>
-        </header>
+        <header className="header">
+            <h1 className="title">Teknolojik Yemekler</h1>
+            <nav className="nav">
+                <ul className="nav-list">
+                    <Link to="/" className="nav-item" > Ana Sayfa </Link>
+                    <Link to="/" className="nav-item">Seçenekler</Link>
+                    <Link to="/pizza" className="nav-item-1">
+                        Sipariş Oluştur
+                    </Link>
+
+                </ul>
+            </nav>
+        </header >
     );
 };
 

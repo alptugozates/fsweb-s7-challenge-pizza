@@ -1,0 +1,240 @@
+#pizza-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  
+  .boyutInput {
+    margin-bottom: 20px;
+  } 
+
+  .boyutHamur {
+    display: flex;
+    gap: 2rem;
+    ;
+  }
+
+ 
+  .hamurSelect {
+    width: 200px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+background-color: #FAF7F2;
+
+
+  }
+
+  .hamurSelect:focus {
+    outline: none;
+  border-color: #FDC913;
+  box-shadow: 0 0 5px #FDC913;
+  }
+  
+  .size-dropdown {
+    margin-bottom: 20px;
+    margin-left: 10rem
+  }
+
+  .size-dropdown input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .size-dropdown input[type="text"]:focus {
+    outline: none;
+    border-color: #4d90fe;
+    box-shadow: 0 0 5px #4d90fe;
+  }
+    
+  
+  
+  .ekmalzemeler {
+    margin-bottom: 15px;
+    margin-right: 18rem;
+    
+  }
+  
+  .ekmalzemeler-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .special-text {
+    gap: 0.5rem;
+    padding: 10px;
+    border-radius: 5px;
+width: 33%;
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+
+}
+
+.special-text input[type="text"] {
+max-width: 80%;
+  padding: 15px;
+background-color: #FAF7F2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #cccccc
+}
+
+.siparisLabel {
+
+    margin-bottom: 5px;
+}
+
+  
+  .total-price {
+    margin-bottom: 20px;
+  }
+  
+  .order-quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16rem;
+    justify-content: flex-end;
+
+
+    
+  }
+
+.spanSiparisAdet {
+    background-color: #FAF7F2;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 0 5px #cccccc
+    
+  }
+
+.handleBtn:hover {
+  background-color: #FDC913;
+  transition: 0.5s;
+  box-shadow: 0 0 5px #cccccc
+}
+  
+  button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+
+  }
+
+  .handleBtn {
+    background-color: #FAF7F2;
+    padding: 15px 30px;
+    font-size: 15px;
+    box-shadow: 0 0 5px #cccccc
+  }
+  
+  #order-button {
+    background-color: #FDC913;
+    color:  #292929;
+    position: absolute;
+padding: 20px 149px;
+font-weight: bold;
+font-family: "Barlow", sans-serif;
+box-shadow: 0 0 5px #cccccc;
+margin-left: -113px;
+
+  }
+
+  #order-button:hover {
+    background-color: #f3d979 ;
+    transition: 0.5s;
+  }
+  
+  #order-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+
+  .errors {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  
+
+
+  
+.ekmalzemeler-input {
+flex-direction: row;
+flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 30%;
+  margin-bottom: 3rem;
+}
+
+.ekmalzemeler-input label {
+  display: flex;
+  align-items: center;
+
+    }
+
+.ekmalzemeler-input input[type="checkbox"] {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: #FAF7F2;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #cccccc
+
+}
+
+
+.ekmalzemeler-input input[type="checkbox"]:checked::before {
+  content: "\2713";
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #292929;
+  background-color: #FDC913;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #cccccc
+}
+
+h4 {
+  font-size:20px;
+  line-height:28px;
+  margin-bottom:15px;
+}
+
+.toplamBtn {
+  display: flex;
+  gap: 3rem;
+
+  
+}
+
+.siparisGonderBtn {
+padding: 1rem 7rem;
+background-color: #FAF7F2;
+margin-bottom: 10rem;
+box-shadow: 0 0 5px #cccccc
+}
+

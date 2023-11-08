@@ -1,0 +1,48 @@
+.header-container {
+    text-align: center;
+    background-image: url("../Assets/mvp-banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px 0;
+    height: 900px;
+    
+}
+
+.header-title {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    color: #FAF7F2;
+    font-size: 2rem;
+    padding-bottom: 3rem;
+ 
+}
+
+.subtitle {
+    font-size: 3.5rem;
+font-weight: 300;
+    margin: 10px 0;
+    font-family: 'Barlow', sans-serif;
+    color: #FAF7F2;
+
+}
+
+#order-pizza {
+    padding: 15px 55px;
+    background-color: #FDC913;
+    color: #292929;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 3rem;
+    font-family: 'Barlow', sans-serif;
+     font-weight: 800;
+     text-decoration: none;
+
+}
+
+#order-pizza:hover {
+    background-color: rgb(249, 220, 118);
+    transition: 0.5s;
+}

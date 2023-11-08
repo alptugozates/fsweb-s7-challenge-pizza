@@ -1,47 +1,44 @@
-.header-container {
-    text-align: center;
-    background-image: url("../Assets/mvp-banner.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 50px 0;
-    height: 900px;
+.header {
+    background-color: #CE2829;
+    padding: 20px;
+    color: #FAF7F2;
     
-}
-
-.header-title {
+  }
+  
+  .title {
+    text-align: center;
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
-    color: #FAF7F2;
-    font-size: 2rem;
-    padding-bottom: 3rem;
- 
-}
-
-.subtitle {
-    font-size: 3.5rem;
-font-weight: 300;
-    margin: 10px 0;
-    font-family: 'Barlow', sans-serif;
-    color: #FAF7F2;
-
-}
-
-.header-button {
-    padding: 15px 55px;
-    background-color: #FDC913;
-    color: #292929;
-    border: none;
-    border-radius: 40px;
-    font-size: 1rem;
-    cursor: pointer;
+  }
+  
+  .nav {
+    margin-top: 10px;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-right: 12rem;
     margin-top: 3rem;
-    font-family: 'Barlow', sans-serif;
-     font-weight: 800;
 
+  }
+  
+  .nav-item {
+    margin: 0 10px;
+    cursor: pointer;
+    color: #FAF7F2;
+    text-decoration: none;
+
+  }
+  .nav-item-1 {
+    margin: 0 10px;
+    cursor: pointer;
+    color: #FAF7F2;
+    text-decoration: none;
+    font-weight: bold;
+  }
+.nav-item:active {
+    font-weight: bold;
 }
 
-.header-button:hover {
-    background-color: rgb(249, 220, 118);
-    transition: 0.5s;
-}
