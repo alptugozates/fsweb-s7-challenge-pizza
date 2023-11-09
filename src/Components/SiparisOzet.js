@@ -32,9 +32,9 @@ const SiparisOzet = ({ siparis }) => {
                             ? (siparis.ekMalzeme.length * siparis.ekMalzemeFiyat * siparis.siparisAdet) : 0}
                         ₺</p>
                     <p>Toplam: {" "}
-                        {(siparis.pizzaFiyat * siparis.siparisAdet) +
-                            siparis.ekMalzeme ?
-                            siparis.ekMalzeme.length * siparis.ekMalzemeFiyat * siparis.siparisAdet : 0}₺</p>
+                        {siparis.pizzaFiyat * siparis.siparisAdet +
+                            (siparis.ekMalzeme ?
+                                siparis.ekMalzeme.length * siparis.ekMalzemeFiyat * siparis.siparisAdet : 0)}₺</p>
                 </div>
             </div>
         </div>
