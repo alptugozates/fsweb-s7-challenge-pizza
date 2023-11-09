@@ -27,8 +27,14 @@ const SiparisOzet = ({ siparis }) => {
                 <p>Ek Malzemeler: {siparis.ekMalzeme}</p>
                 <div className="siparis-ozet">
                     <h3>Sipariş Toplamı</h3>
-                    <p>Seçimler: {siparis.ekMalzeme * siparis.ekMalzemeFiyat}₺</p>
-                    <p>Toplam: {siparis.pizzaFiyat * siparis.siparisAdet * siparis.ekMalzeme * siparis.ekMalzemeFiyat}₺</p>
+                    <p> Seçimler:{" "}
+                        {siparis.ekMalzeme
+                            ? (siparis.ekMalzeme.length * siparis.ekMalzemeFiyat * siparis.siparisAdet) : 0}
+                        ₺</p>
+                    <p>Toplam: {" "}
+                        {(siparis.pizzaFiyat * siparis.siparisAdet) +
+                            siparis.ekMalzeme ?
+                            siparis.ekMalzeme.length * siparis.ekMalzemeFiyat * siparis.siparisAdet : 0}₺</p>
                 </div>
             </div>
         </div>
