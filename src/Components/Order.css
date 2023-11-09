@@ -8,8 +8,16 @@
   
   .boyutInput {
     margin-bottom: 20px;
+    margin-right: -2rem;
   } 
+  .boyutInput input[type="radio"] {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
 
+  }
+  
+  
   .boyutHamur {
     display: flex;
     gap: 2rem;
@@ -121,7 +129,7 @@ background-color: #FAF7F2;
 
 .handleBtn:hover {
   background-color: #FDC913;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
   box-shadow: 0 0 5px #cccccc
 }
   
@@ -155,7 +163,7 @@ margin-left: -113px;
 
   #order-button:hover {
     background-color: #f3d979 ;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
   }
   
   #order-button:disabled {
