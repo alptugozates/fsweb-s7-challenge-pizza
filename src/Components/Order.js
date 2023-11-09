@@ -19,8 +19,9 @@ const dobbyData = {
     pizzaBoyut: "",
     ekMalzeme: [],
     not: "",
-    siparisAdet: 0,
-
+    siparisAdet: 1,
+    pizzaFiyat: 85.50,
+    ekMalzemeFiyat: 5,
 };
 
 const dobbyDataErrors = {
@@ -31,16 +32,6 @@ const dobbyDataErrors = {
     siparisAdet: "",
 };
 
-const dobbySiparisData = {
-    id: "",
-    createdAt: "",
-    pizzaKenar: "",
-    pizzaBoyut: "",
-    ekMalzeme: [],
-    not: "",
-    siparisAdet: "",
-    pizzaFiyat: 0,
-};
 
 
 
@@ -67,19 +58,15 @@ const schema = yup.object().shape({
 
     pizzaKenar: yup
         .mixed()
-        .oneOf(["ince", "normal", "kalın"])
+        .oneOf(["İnce", "Normal", "Kalın"])
         .required("Hamur kalınlığı seçmelisiniz."),
 });
 
-const pizzaPrice = 85.50;
-const extraToppingsPrice = 5;
-
-const Order = () => {
+const Order = ({ setSiparis }) => {
     const [formData, setFormData] = useState(dobbyData);
     const [errors, setErrors] = useState(dobbyDataErrors);
-    const [siparisData, setSiparisData] = useState(dobbySiparisData);
+
     const [disabled, setDisabled] = useState(true);
-    const [gelenSiparis, setGelenSiparis] = useState(false);
 
 
 
@@ -141,30 +128,31 @@ const Order = () => {
 
 
     const historySiparisOzeti = useHistory();
+
     const handleSubmit = (event) => {
-        historySiparisOzeti.push('/siparis-ozeti');
         event.preventDefault();
         axios
             .post("https://reqres.in/api/users", formData)
             .then((res) => {
+                historySiparisOzeti.push('/siparis-ozeti');
                 console.log(res.data)
-                setGelenSiparis(true);
-                setSiparisData(res.data);
+                setSiparis(res.data);
+                // setGelenSiparis(true);
+                // setSiparisData(res.data);
 
-                setTimeout(() => {
-                    setGelenSiparis(false);
-                }, 3000);
+                // setTimeout(() => {
+                //     setGelenSiparis(false);
+                // }, 3000);
 
-                setTimeout(() => {
-                    setSiparisData(dobbySiparisData);
-                }, 8000);
+                // setTimeout(() => {
+                //     setSiparisData(initialSiparisData);
+                // }, 8000);
 
-                setFormData(dobbyData);
+                // setFormData(dobbyData);
 
             })
             .catch((err) => console.log("Errors: ", err));
     };
-
 
 
 
@@ -176,7 +164,7 @@ const Order = () => {
                 <div className='boyutHamur'>
                     <div className='boyutInput'>
                         <h4>Boyut Seçiniz</h4>
-                        <label htmlFor="small">Küçük</label>
+                        <label htmlFor="small">S</label>
                         <input
                             type="radio"
                             id="kücük"
@@ -185,7 +173,7 @@ const Order = () => {
                             checked={formData.pizzaBoyut === 'kücük'}
                             onChange={handleChange}
                         />
-                        <label htmlFor="medium">Orta</label>
+                        <label htmlFor="medium">M</label>
                         <input
                             type="radio"
                             id="orta"
@@ -194,7 +182,7 @@ const Order = () => {
                             checked={formData.pizzaBoyut === 'orta'}
                             onChange={handleChange}
                         />
-                        <label htmlFor="large">Büyük</label>
+                        <label htmlFor="large">L</label>
                         <input
                             type="radio"
                             id="büyük"
@@ -214,9 +202,9 @@ const Order = () => {
                             onChange={handleChange}
                         >
                             <option value="hamurKalinligi">-Hamur Kalınlığı Seç-</option>
-                            <option value="ince">İnce</option>
-                            <option value="normal">Normal</option>
-                            <option value="kalın">Kalın</option>
+                            <option value="İnce">İnce</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Kalın">Kalın</option>
                         </select>
                     </div>
                     <div className="errors">{errors.pizzaKenar}</div>
@@ -226,52 +214,52 @@ const Order = () => {
                     <p> En fazla 3 malzeme seçebilirsiniz. 5₺</p>
                 </div>
                 <div className='ekmalzemeler-input'>
-                    <label htmlFor="pepperoni">Pepperoni</label>
+                    <label htmlFor="Pepperoni">Pepperoni</label>
                     <input
                         type="checkbox"
-                        id="pepperoni"
+                        id="Pepperoni"
                         name="ekMalzeme"
-                        checked={formData.ekMalzeme.includes("pepperoni")}
+                        checked={formData.ekMalzeme.includes("Pepperoni")}
                         onChange={handleChange}
                     />
-                    <label htmlFor="domates">Domates</label>
+                    <label htmlFor="Domates">Domates</label>
                     <input
                         type="checkbox"
-                        id="domates"
+                        id="Domates"
                         name="ekMalzeme"
-                        checked={formData.ekMalzeme.includes("domates")}
+                        checked={formData.ekMalzeme.includes("Domates")}
                         onChange={handleChange}
                     />
-                    <label htmlFor="biber">Biber</label>
+                    <label htmlFor="Biber">Biber</label>
                     <input
                         type="checkbox"
-                        id="biber"
+                        id="Biber"
                         name="ekMalzeme"
-                        checked={formData.ekMalzeme.includes("biber")}
+                        checked={formData.ekMalzeme.includes("Biber")}
                         onChange={handleChange}
                     />
-                    <label htmlFor="sucuk">Sucuk</label>
+                    <label htmlFor="Sucuk">Sucuk</label>
                     <input
                         type="checkbox"
-                        id="sucuk"
+                        id="Sucuk"
                         name="ekMalzeme"
-                        checked={formData.ekMalzeme.includes("sucuk")}
+                        checked={formData.ekMalzeme.includes("Sucuk")}
                         onChange={handleChange}
                     />
-                    <label htmlFor="tavukızgara">Tavuk Izgara</label>
+                    <label htmlFor="Tavuk Izgara">Tavuk Izgara</label>
                     <input
                         type="checkbox"
-                        id="tavukızgara"
+                        id="Tavuk Izgara"
                         name="ekMalzeme"
-                        checked={formData.ekMalzeme.includes("tavukızgara")}
+                        checked={formData.ekMalzeme.includes("Tavuk Izgara")}
                         onChange={handleChange}
                     />
-                    <label htmlFor="mısır">Mısır</label>
+                    <label htmlFor="Mısır">Mısır</label>
                     <input
                         type="checkbox"
-                        id="mısır"
+                        id="Mısır"
                         name="ekMalzeme"
-                        checked={formData.ekMalzeme.includes("mısır")}
+                        checked={formData.ekMalzeme.includes("Mısır")}
                         onChange={handleChange}
                     />
                     <label htmlFor="kanadajambonu">Kanada Jambonu</label>
@@ -320,19 +308,16 @@ const Order = () => {
                     <div className='siparisGonderBtn'>
                         <div className="total-price">
                             <h4>Sipariş Toplamı:</h4>
-                            <p className='pSecim'>Seçimler: {extraToppingsPrice * formData.ekMalzeme.length * formData.siparisAdet}₺</p>
-                            <p className='pSecim'>Toplam: {pizzaPrice * formData.siparisAdet + extraToppingsPrice * formData.ekMalzeme.length}₺</p>
+                            <p className='pSecim'>Seçimler: {(formData.ekMalzemeFiyat * formData.ekMalzeme.length) * formData.siparisAdet}₺</p>
+                            <p className='pSecim'>Toplam: {formData.pizzaFiyat * formData.siparisAdet + (formData.siparisAdet * formData.ekMalzemeFiyat * formData.ekMalzeme.length)}₺</p>
                         </div>
 
                         <button disabled={disabled} name="button" id="order-button" type="submit">Sipariş Ver</button>
                     </div>
                 </div>
-                {gelenSiparis && <SiparisOzet formData={formData}
-                    pizzaBoyut={formData.pizzaBoyut}
-                    pizzaKenar={formData.pizzaKenar}
-                    ekMalzeme={formData.ekMalzeme}
-                    siparisAdet={formData.siparisAdet}
-                />}
+
+
+
             </form>
 
         </div>
