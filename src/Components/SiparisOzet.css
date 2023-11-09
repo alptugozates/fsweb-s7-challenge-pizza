@@ -1,9 +1,18 @@
 
+.order-container {
+    background-color: #CE2829;
+    width: 100%;
+    height: 56rem;
+    background-size: cover;
+    color: #FAF7F2;
+}
+
 .order-done {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #CE2829;
+    
 
 
 }
